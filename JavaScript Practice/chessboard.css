@@ -1,0 +1,63 @@
+:root {
+    --size:      640px;
+    --backcolor: darkslategray;
+    --dark:      grey;
+    --light:     white;
+    --legend:    azure;
+    --hover:     lightgreen
+  }
+  .board {
+    width: var(--size);
+    height: var(--size);
+    border: 32px solid;
+    border-color: var(--backcolor);
+    border-radius: 0.2rem;
+    margin: auto;
+  }
+  .square {
+    border: 1px black solid;
+  }
+  .white {
+    background: var(--light);
+  }
+  .black {
+    background: var(--dark);
+  }
+  .board tr::before {
+    content: attr(data-line);
+    position: absolute;
+    margin: 1.8rem 0 0rem -1.5rem;
+    font-size: larger;
+    color: var(--legend);
+  }
+  .board tr::after {
+    content: attr(data-line);
+    position: absolute;
+    margin: 1.8rem 0 0rem 0.8rem;
+    font-size: larger;
+    color: var(--legend);
+  }
+  .board tr:first-child > td::before {
+    content: attr(data-col);
+    position: absolute;
+    margin: -4rem 0 0rem 1.6rem;
+    font-size: larger;
+    color: var(--legend);
+  }
+  .board tr:last-child > td::after {
+    content: attr(data-col);
+    position: absolute;
+    margin: 2.6rem 0 0rem 1.6rem;
+    font-size: larger;
+    color: var(--legend);
+  }
+  td:hover {
+    background: var(--hover);
+    cursor: pointer
+  }
+
+  #heading {
+      text-align: center;
+  }
+
+ 
